@@ -15,5 +15,4 @@ authors:
     given-names: "Soltan"
   - family-names: "Geok"
     given-names: "Tan Kim"
-doi: "10.5281/zenodo.XXXXXXX"
-repository-code: "REPLACE_WITH_GITHUB_REPOSITORY_URL"
+repository-code: "https://github.com/ucerd/peerj-hpc-reproducibility"
