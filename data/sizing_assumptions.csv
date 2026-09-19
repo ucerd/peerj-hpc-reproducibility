@@ -1,0 +1,7 @@
+Parameter_Key,Symbol,Value,Unit,Source_Note
+peak_factor,phi,1.25,dimensionless,Table 2 assumption; manuscript also gives a reasonable planning range of 1.15–1.35.
+cpu_target_utilization,eta_CPU,0.7,fraction,Table 2 assumption and manuscript planning default.
+gpu_target_utilization,eta_GPU,0.6,fraction,Table 2 assumption and manuscript planning default.
+available_hours_per_month,M,720,hours/month,Table 2 assumption; manuscript describes 720 as typical.
+cpu_cores_per_node,C_node,64,CPU cores/node,Table 2 assumption.
+gpus_per_node,G_node,4,GPUs/node,Table 2 assumption.

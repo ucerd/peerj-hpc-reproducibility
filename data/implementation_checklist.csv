@@ -1,0 +1,15 @@
+Area,Checklist_Item,Artifact_or_Evidence
+Mission alignment,"Define intended support for teaching, research, and innovation separately; identify executive/faculty sponsorship.",README; requirement_extraction.csv; framework_traceability.csv
+Workload discovery,"Estimate CPU core-hours, GPU-hours, interactive sessions, storage tiers, and external-project demand.",sizing_assumptions.csv; institutional_profiles.csv; illustrative_scenario.csv
+Facilities,"Verify power, cooling, rack space, grounding, fire suppression, and on-site physical security.",Local engineering study required; not prescribed by the generic framework.
+Networking,"Plan compute fabric, storage connectivity, campus/service access, data-transfer path, and out-of-band management.",procurement_template.csv; NAMAL_HPC_CONTEXT.md
+Identity and access,"Integrate central identity where possible, apply MFA where appropriate, and define guest/partner access.",requirement_extraction.csv; SECURITY.md
+Provisioning,"Select repeatable installation/provisioning baseline, image management, and configuration-control approach.",IMPLEMENTATION_GUIDE.md
+Scheduler policy,"Define partitions, QoS classes, quotas, teaching windows, fair-share rules, and reservations.",examples/slurm; IMPLEMENTATION_GUIDE.md
+Container policy,"Approve container runtime, trusted base images, verification policy, and image-retention practices.",IMPLEMENTATION_GUIDE.md
+Portals,"Decide whether browser portal, JupyterHub, remote desktop, or IDE services are in scope by phase.",requirement_extraction.csv
+Storage,"Define scratch, project, and archive tiers plus retention, purge, backup, and snapshot policies.",hpc_sizing.py; procurement_template.csv
+Data governance,Map data classes and approval routes; identify workloads that require restricted environments.,implementation_checklist.csv; requirement_extraction.csv
+Support model,"Define ticketing, onboarding, documentation, office hours, training cadence, and escalation responsibilities.",IMPLEMENTATION_GUIDE.md; training_source_index.csv
+Finance,"Define capital source, refresh reserve, recharge/condominium options, and attribution/reporting model.",procurement_template.csv
+Evaluation,Adopt implementation and outcome KPI definitions before launch and review them periodically.,kpi_definitions.csv

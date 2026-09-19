@@ -1,0 +1,12 @@
+KPI,Type,Definition,Suggested_Data_Source
+Provisioned node availability,Implementation,Share of scheduled service hours in which provisioned nodes are available for use.,Slurm/node monitoring and maintenance records
+Median queue wait time,Implementation,"Median time between job submission and start for standard jobs, reported by partition/QoS.",Slurm accounting
+GPU utilization rate,Implementation,Aggregate occupied GPU-hours divided by available GPU-hours over the reporting period.,Slurm accounting plus GPU telemetry
+Interactive session completion rate,Implementation,Share of scheduled notebook/portal sessions completed without administrative failure.,Portal/Jupyter service logs
+Training completion count,Implementation,"Number of users completing defined onboarding, workshop, or course modules.",Training records
+Software environment reproducibility,Implementation,Share of supported workflows executed through approved containers or versioned environments.,Container/module usage records
+Storage policy compliance,Implementation,Share of active projects using approved storage tiers rather than unmanaged patterns.,Filesystem/project audits
+External project onboarding time,Implementation,Median days from an approved external-project request to a usable project workspace.,Service desk/project records
+Publications enabled,Outcome,Count of scholarly outputs citing or acknowledging the platform.,Institutional publication records
+Curricular integration depth,Outcome,Number of courses using the platform and the level of integration in assessments/labs.,Course records
+Prototype transition count,Outcome,Number of projects progressing from exploratory compute use to validated prototypes or delivered services.,Innovation/technology-transfer records

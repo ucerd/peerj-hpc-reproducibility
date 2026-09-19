@@ -1,0 +1,10 @@
+Parameter,Current_Value,Unit_or_Type,Status,Provenance,Role_in_Study,Notes
+Facility,Namal Supercomputing Facility,name,Context only,CAID Year in Review 2026,Context only,Operational institutional HPC environment; not used to derive the illustrative sizing examples.
+Compute nodes,20,nodes,Publicly documented,"CAID Year in Review 2026, Supercomputer-as-a-Service page",Context only,Retained because it is not superseded by the operator correction supplied for this release.
+CPU cores,1600,cores,Publicly documented,"CAID Year in Review 2026, Supercomputer-as-a-Service page",Context only,Aggregate full-cluster CPU-core count reported in the annual report.
+GPU model,NVIDIA GeForce RTX 4070 Ti,accelerator model,Operator confirmed 2026-09-20,CAID facility operator confirmation,Context only,Supersedes any conflicting/older repository or annual-report summary.
+GPU count,40,GPUs,Operator confirmed 2026-09-20,CAID facility operator confirmation,Context only,Current value for this reproducibility release.
+System RAM,5,TB,Operator confirmed 2026-09-20,CAID facility operator confirmation,Context only,Current aggregate memory value for this reproducibility release.
+Cluster network,Low-latency switched fabric,network fabric,Operator confirmed 2026-09-20,CAID facility operator confirmation,Context only,Exact line rate/topology intentionally not asserted here.
+Scheduler,Slurm,workload manager,Publicly documented,CAID Year in Review 2026 and supplied training material,Context only,Used for the publication-safe job examples in examples/slurm.
+Representative services,AI training; simulation; modeling; data processing; Supercomputing-as-a-Service,service scope,Publicly documented,CAID Year in Review 2026,Context only,Illustrates framework applicability; not an empirical outcome dataset.

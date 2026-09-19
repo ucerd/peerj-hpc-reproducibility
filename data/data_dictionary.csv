@@ -1,0 +1,19 @@
+File_or_Sheet,Field,Type,Definition
+source_inventory.csv,Source_ID,string,Unique retained-source identifier.
+source_inventory.csv,Citation_Key,string,Manuscript citation key.
+requirement_extraction.csv,Requirement_ID,string,Unique consolidated requirement identifier.
+sizing_assumptions.csv,Value,number,Numerical assumption used in manuscript worked examples.
+institutional_profiles.csv,CPU_Core_Hours_Per_Month,integer,Combined illustrative monthly CPU demand.
+institutional_profiles.csv,GPU_Hours_Per_Month,integer,Combined illustrative monthly GPU demand.
+illustrative_scenario.csv,CPU_Core_Hours_Per_Month,integer,Illustrative scenario monthly CPU demand.
+implementation_checklist.csv,Area,string,Readiness/implementation control area.
+implementation_checklist.csv,Checklist_Item,string,Recommended implementation action.
+kpi_definitions.csv,KPI,string,Implementation or outcome indicator.
+kpi_definitions.csv,Type,enum,Implementation or Outcome.
+procurement_template.csv,Component,string,Parameterized infrastructure component.
+framework_traceability.csv,RQ,string,Research question identifier.
+framework_traceability.csv,Repository_Evidence,string,Files supporting/auditing the artifact.
+namal_hpc_public_context.csv,Current_Value,string,Current contextual value; not an analytical sizing input.
+namal_hpc_public_context.csv,Status,string,Publicly documented or operator-confirmed provenance status.
+training_source_index.csv,Training_Source,string,Relative source path/topic from supplied training archive.
+training_source_index.csv,Sanitization_or_Engineering_Change,string,Transformation applied for public-release examples.

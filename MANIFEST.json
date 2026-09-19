@@ -1,0 +1,310 @@
+{
+  "package": "PeerJ HPC Reproducibility and Implementation Package",
+  "version": "1.0.0",
+  "release_date": "2026-09-20",
+  "validation": {
+    "reproduction": "PASS",
+    "unit_tests": "PASS",
+    "slurm_bash_syntax": "PASS",
+    "publication_safety_scan": "PASS"
+  },
+  "current_namal_context": {
+    "gpu_model": "NVIDIA GeForce RTX 4070 Ti",
+    "gpu_count": 40,
+    "aggregate_ram_tb": 5,
+    "network": "Low-latency switched cluster fabric",
+    "role_in_study": "context_only_not_empirical_validation_data"
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "e5fcd7777b6cfa3ac38989c89f607751297bfb148b0a902db66586d42535b029",
+      "bytes": 71
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "f17ce31e2fb73e524dfca9eb68cdce70998e82d55af16fadc0696f3cd8c1b121",
+      "bytes": 770
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "462566c41fcdea375dac3c47e2152a60bfd0992ff19d8b764d42e072c2057b11",
+      "bytes": 735
+    },
+    {
+      "path": "LICENSE_CODE",
+      "sha256": "5dc22da96223cd171c230cd62f325427e8a49fd5ba3e611c4b3f5e849b389622",
+      "bytes": 1145
+    },
+    {
+      "path": "LICENSE_DATA",
+      "sha256": "8ee0caf718cc330efe8a745ab7d59915d1d6ee30c333c2652a7bc6d3b235c60c",
+      "bytes": 575
+    },
+    {
+      "path": "README.md",
+      "sha256": "a838ec172080622d2dda586c152335f99dd7a7d111af16862b63d86a9425e945",
+      "bytes": 6719
+    },
+    {
+      "path": "RELEASE_CHECKLIST.md",
+      "sha256": "a463a99976637389bcf1573c5e93511c901795750b0ed99b4bb4a1a924304977",
+      "bytes": 856
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "a4299ac3f2fcf7506d8e62e10653176c13495aeefeebd6d877666f0f5e4de3bd",
+      "bytes": 544
+    },
+    {
+      "path": "VERSION",
+      "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
+      "bytes": 6
+    },
+    {
+      "path": "code/hpc_sizing.py",
+      "sha256": "ae00bae90f9b4a20a5e398fc06d4916a65debba909e7848c3e97df0b05131150",
+      "bytes": 5300
+    },
+    {
+      "path": "code/reproduce_results.py",
+      "sha256": "06f664b094d885f459d8a2fd6cd2bf3794a5993af161773d2fa610f683827733",
+      "bytes": 4949
+    },
+    {
+      "path": "code/validate_package.py",
+      "sha256": "c9394bb3a6c2e04fa257f95b784ac4e3421a504b6b3c89a02cc9623377e606d2",
+      "bytes": 4073
+    },
+    {
+      "path": "config/namal_hpc_profile.json",
+      "sha256": "c4a7a6df998b9403c22d80a32cd0fe30f298f56cc3df93461525ea1b5068de2b",
+      "bytes": 889
+    },
+    {
+      "path": "data/Supplemental_Data_S1.xlsx",
+      "sha256": "9e7579b3f0240acba4698c3565b3ef45e19f93ba4054760893829d4fac3507e4",
+      "bytes": 38349
+    },
+    {
+      "path": "data/conformance_matrix.csv",
+      "sha256": "07a814023b917992afacc6847b9225dd1d838d1fe7bbf620bec07cda29062a75",
+      "bytes": 2196
+    },
+    {
+      "path": "data/data_dictionary.csv",
+      "sha256": "e3efd3c929764d861f5bad2d6b7dfd44fc1719496396db2bcb82077e681b18c3",
+      "bytes": 1654
+    },
+    {
+      "path": "data/framework_traceability.csv",
+      "sha256": "fbb59005d0097c3e37db446503a2bfe5dd9ee9cf9b447176093c3209230500c2",
+      "bytes": 1322
+    },
+    {
+      "path": "data/illustrative_scenario.csv",
+      "sha256": "6e70015102c564e51e0654aad9e0f7fc7746055aa9ae566aabc154fb9283fdc1",
+      "bytes": 744
+    },
+    {
+      "path": "data/implementation_checklist.csv",
+      "sha256": "bc48fbe8a4da512d7a294be3b815bbf0a123c312751ceff10a3126bd411381a7",
+      "bytes": 2311
+    },
+    {
+      "path": "data/institutional_profiles.csv",
+      "sha256": "da49d2085ea854e9f80a67508e24968b9b4093adca15786e854bce879ab5968b",
+      "bytes": 517
+    },
+    {
+      "path": "data/kpi_definitions.csv",
+      "sha256": "70292ae3c5b19e221411d01db85a8142a111663f901e35cf41ee5debbfeb4d19",
+      "bytes": 1775
+    },
+    {
+      "path": "data/namal_hpc_public_context.csv",
+      "sha256": "e1506ba7f3cac3a4de6ee5505eb78e4f37463062ee2e5a20a72dae932da44d08",
+      "bytes": 1803
+    },
+    {
+      "path": "data/procurement_template.csv",
+      "sha256": "0a044cbcfac9894a3edaf139fd556a5bbf040b409012ec5c0b5a9cc1f99f9f30",
+      "bytes": 1688
+    },
+    {
+      "path": "data/requirement_extraction.csv",
+      "sha256": "f87a36e42ddd46d1b6286fe2faa3f404a07476c88c8a2fb05c3392bee456944a",
+      "bytes": 7225
+    },
+    {
+      "path": "data/rounding_rules.csv",
+      "sha256": "f317899b9df68f401f859e2b431cb176a741d6f3556e34031fb14a82f81b1dbd",
+      "bytes": 922
+    },
+    {
+      "path": "data/sizing_assumptions.csv",
+      "sha256": "b906d09f6539c85bf90df610e169d1a4db63693cd253bf9fc9f5d2471f4afbfe",
+      "bytes": 582
+    },
+    {
+      "path": "data/source_inventory.csv",
+      "sha256": "813c0a104e8605d56f1a83c076538949740264f0a09e8d62f466134f1e5ec0b5",
+      "bytes": 12843
+    },
+    {
+      "path": "data/training_source_index.csv",
+      "sha256": "d9f98eeab0c7cf496c018d9b0157683b9eb48f2cab1cb581780e0ee4201d11ad",
+      "bytes": 2610
+    },
+    {
+      "path": "docs/GITHUB_ZENODO_RELEASE.md",
+      "sha256": "5c0025070c2e16aa420e8852f9e493df1329bbb680837ee314dbc790203abeef",
+      "bytes": 831
+    },
+    {
+      "path": "docs/IMPLEMENTATION_GUIDE.md",
+      "sha256": "37c991fed0efb955ea50adbb28b714ee27a1b8b2f636f2a22add683a2faebe34",
+      "bytes": 3221
+    },
+    {
+      "path": "docs/NAMAL_HPC_CONTEXT.md",
+      "sha256": "a36237a68a4a84b00fff6cab16ffaf57d2fa3f51f5b1a978118386e66e5eb7b0",
+      "bytes": 1417
+    },
+    {
+      "path": "docs/PEERJ_RESUBMISSION_TEXT.md",
+      "sha256": "9a0e19352dbc70f09128039d170db008e292d00267ecd4d6134e69123e844810",
+      "bytes": 2057
+    },
+    {
+      "path": "docs/REFERENCE_ARCHITECTURE.md",
+      "sha256": "8a8791ced587df9ede4d2f33a763e844f728bb906ff20a24c55fc1e9ae885006",
+      "bytes": 736
+    },
+    {
+      "path": "docs/REPRODUCIBILITY_NOTES.md",
+      "sha256": "79d392c40d7a6a8e255b0517a0588e4c593c88409d1b08412030e928a997c9ae",
+      "bytes": 960
+    },
+    {
+      "path": "docs/TRAINING_MATERIAL_PROVENANCE.md",
+      "sha256": "9614363b5c2e2441ef51f701f1569471cc5ebffcd6b8be02c04cf209df59d07a",
+      "bytes": 1150
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "db5d04c892dca788dfaeb22259c26444a02773e298bf0234c13d806733198274",
+      "bytes": 650
+    },
+    {
+      "path": "examples/python/checkpoint_train.py",
+      "sha256": "80151095be444e3c1ac9d766956468a13885a146df4f01c39fc8dcda50e4c553",
+      "bytes": 2693
+    },
+    {
+      "path": "examples/python/ddp_smoke_test.py",
+      "sha256": "9e3728c2c69b565476be8a332fee9c0565f9c65c3c2f7bd44c8124666fe4b696",
+      "bytes": 1721
+    },
+    {
+      "path": "examples/slurm/00_cpu_single_node.sbatch",
+      "sha256": "3c5834d2924ba94ca1010eb989a68b7b12ed8d19f661ca8d1213748a99502778",
+      "bytes": 397
+    },
+    {
+      "path": "examples/slurm/01_basic_multinode.sbatch",
+      "sha256": "d227ff9cfb80bcc34ac28ed80f430bd8a82d15be4c8ecb7050d1bfe1abbc1f7a",
+      "bytes": 483
+    },
+    {
+      "path": "examples/slurm/02_openmp.sbatch",
+      "sha256": "0ea3a0cc125f1abbe4d0d02e526a746eab9ef5b600fb9375ebf0fd5ce5fffdbc",
+      "bytes": 559
+    },
+    {
+      "path": "examples/slurm/03_mpi_multinode.sbatch",
+      "sha256": "5905e74f84a3fc948b2f5738a1bdbac367e9aca112af5b3aee7eab55e7c86b39",
+      "bytes": 542
+    },
+    {
+      "path": "examples/slurm/04_gpu_single_node.sbatch",
+      "sha256": "2325df362f63fc853eb40914702bfde52bb9bebdadf6ef2441c3bca89f7a6727",
+      "bytes": 428
+    },
+    {
+      "path": "examples/slurm/05_gpu_multinode_probe.sbatch",
+      "sha256": "ac7690697964210ab6baa79c554ddc6a2e4321354d04b28f39bb785a662deb2a",
+      "bytes": 463
+    },
+    {
+      "path": "examples/slurm/06_pytorch_single_gpu.sbatch",
+      "sha256": "07051546e0e7e331a3ac745d0791855fc79a7b3c4c8693905365c2ce89f44b2c",
+      "bytes": 611
+    },
+    {
+      "path": "examples/slurm/07_pytorch_ddp.sbatch",
+      "sha256": "15782e7d18632a6ac22896ca8a10ab0a652e5d32e42ce672b35ffbee60c2145b",
+      "bytes": 902
+    },
+    {
+      "path": "examples/slurm/08_pytorch_ddp_requeue.sbatch",
+      "sha256": "f2b7db07b4cc8dd9108438c29c6ecfd50d528313ee1ebbae2ac2ad264853554d",
+      "bytes": 829
+    },
+    {
+      "path": "examples/slurm/09_cuda_compile_and_run.sbatch",
+      "sha256": "7c124e1a6be44ff7106fb6ce07982924bb8f96ddf097029c7b6d27499bef5ab1",
+      "bytes": 505
+    },
+    {
+      "path": "examples/slurm_commands.md",
+      "sha256": "7d21aa1c091974c039400b59492dc898bbd833b0608b7ee1a89bfb45eaa56fd9",
+      "bytes": 603
+    },
+    {
+      "path": "examples/src/cuda_vector_add.cu",
+      "sha256": "17cbf93d6a3a1ecb709e011fb6c13b7afe7eb5b92479996464d777917b5816ad",
+      "bytes": 1539
+    },
+    {
+      "path": "examples/src/hello_mpi.c",
+      "sha256": "8bbc695303f8cff8197fa186fa178ca445b7f77e7f927a9ca733bebd67446bca",
+      "bytes": 396
+    },
+    {
+      "path": "examples/src/openmp_hello.c",
+      "sha256": "d409b8e8c8ed53f939d139c211815124546984abc2b71ca0a6ccba2b9a6af984",
+      "bytes": 218
+    },
+    {
+      "path": "outputs/illustrative_scenario_reproduced.csv",
+      "sha256": "b6b9f32d639245030473dc12e5bb9158f43f34b0143707152418bf38234b208a",
+      "bytes": 821
+    },
+    {
+      "path": "outputs/package_validation.txt",
+      "sha256": "944997121eb7945e71ff1fccd0e55e963b67e21421a31aa50c6327fb0537e64d",
+      "bytes": 2664
+    },
+    {
+      "path": "outputs/table2_reproduced.csv",
+      "sha256": "c1d8b73edf5defaa4b6175e8fe4846bf2691830103156d219134f92f7d655b38",
+      "bytes": 624
+    },
+    {
+      "path": "outputs/validation_report.txt",
+      "sha256": "2fe6eaa60daf33fc0eb8f291954e191a6e25d22524a51c8f6062b16e7a1d8c21",
+      "bytes": 612
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "e09940953ea544b6e684c7b0d794ed4f3a9ad9020de204a8835e7c7cc91a2beb",
+      "bytes": 158
+    },
+    {
+      "path": "tests/test_hpc_sizing.py",
+      "sha256": "5e63ebadba45d24fbbd841d467e5da0517eec558ace8fec2f5dc0719920aedda",
+      "bytes": 1695
+    }
+  ]
+}

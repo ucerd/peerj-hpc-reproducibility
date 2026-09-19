@@ -1,0 +1,2 @@
+# Core numerical reproduction uses only the Python 3.10+ standard library.
+# The optional PyTorch/Slurm examples use the site's managed PyTorch/CUDA modules.

@@ -1,0 +1,13 @@
+Component,Parameter_or_Example,Role_in_Architecture,Local_Engineering_Required
+CPU compute nodes,"n_c nodes, each with two sockets and C_node total cores","General simulation, compilation, MPI, ETL, and moderately parallel workloads",Yes
+GPU compute nodes,"n_g nodes, each with G_node GPUs and adequate host RAM","AI training, inference, accelerated analytics, and student AI laboratories",Yes
+Login nodes,1–2 redundant servers,"Shell access, compilation, gateway functions; not production compute",Yes
+Management servers,1–2 servers,"Scheduler/controller, accounting database, monitoring, provisioning, IAM integration",Yes
+Scratch storage,S_active TB high-throughput,"Temporary job I/O, checkpoints, purge-enabled workspace",Yes
+Persistent project storage,S_persistent TB with snapshots/backup,"Shared project data, software stacks, retained outputs",Yes
+Archive tier,S_archive TB or object/tape service,"Curated retention, long-term storage, compliance copies",Yes
+Compute network,Low-latency fabric sized to node/accelerator communication demand,"MPI, collective communication, accelerator scale-out",Yes
+Campus/service network,Institution-appropriate Ethernet/service connectivity,"Portal, transfer, management, and user access",Yes
+Out-of-band management,Separate management path and remote power control,"Recovery, secure administration, and fault isolation",Yes
+Software baseline,"Linux, Slurm, containers, portal, monitoring, environment modules",Governed shared-computing service,Yes
+Support contract and staff,Vendor/integrator support plus internal operations capability,"Hardware support, daily operations, user support, training, security coordination",Yes

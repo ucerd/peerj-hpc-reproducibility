@@ -1,0 +1,15 @@
+Validation status: PASS
+
+Table 2 institutional profiles:
+- Entry: CPU 3 (reported 3), GPU 1 (reported 1)
+- Intermediate: CPU 11 (reported 11), GPU 6 (reported 6)
+- Advanced: CPU 28 (reported 28), GPU 21 (reported 21)
+
+Illustrative scenario:
+- Illustrative hypothetical university: CPU 12 (reported 12), GPU 8 (reported 8)
+
+Storage note:
+Storage equations are implemented in code/hpc_sizing.py, but the manuscript
+does not report the component-level D_* inputs needed to reconstruct the
+Table 2 storage ranges. Those ranges are therefore preserved as reported
+rather than reverse-engineered from invented inputs.

@@ -1,0 +1,26 @@
+{
+  "profile_name": "Namal Supercomputing Facility - public contextual profile",
+  "release_date": "2026-09-20",
+  "role_in_study": "context_only_not_empirical_validation_data",
+  "compute": {
+    "nodes": 20,
+    "cpu_cores_total": 1600
+  },
+  "gpu": {
+    "model": "NVIDIA GeForce RTX 4070 Ti",
+    "count": 40
+  },
+  "memory": {
+    "aggregate_tb": 5
+  },
+  "network": {
+    "fabric": "Low-latency switched cluster fabric",
+    "exact_line_rate_asserted": false
+  },
+  "scheduler": "Slurm",
+  "provenance": {
+    "nodes_and_cpu": "CAID Year in Review 2026, Supercomputer-as-a-Service page",
+    "gpu_memory_network_override": "CAID facility operator confirmation, 2026-09-20"
+  },
+  "methodological_boundary": "This profile is contextual implementation evidence only. It is not used to derive the manuscript's illustrative sizing results or to claim empirical institutional outcomes."
+}

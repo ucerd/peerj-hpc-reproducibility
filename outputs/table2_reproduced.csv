@@ -1,0 +1,4 @@
+Profile,CPU_Core_Hours_Per_Month,GPU_Hours_Per_Month,Manuscript_CPU_Nodes,Manuscript_GPU_Nodes,Suggested_Active_Storage,Suggested_Persistent_Storage,Typical_Staffing_Floor,Representative_Fit,Calculated_CPU_Nodes,Calculated_GPU_Nodes,CPU_Match,GPU_Match
+Entry,70000,1200,3,1,50–100 TB,20–50 TB,1 FTE,New teaching and research platform,3,1,True,True
+Intermediate,260000,8000,11,6,150–300 TB,100–200 TB,2–3 FTE,Research-active campus with moderate AI demand,11,6,True,True
+Advanced,700000,28000,28,21,500+ TB,300+ TB,4–6 FTE,Regional platform supporting major AI workloads and external projects,28,21,True,True

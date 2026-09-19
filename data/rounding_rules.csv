@@ -1,0 +1,5 @@
+Rule_ID,Applies_To,Rule,Expression_or_Source,Implementation_Note
+RR-01,CPU node count,Use the ceiling of the calculated CPU-node requirement.,N_CPU_nodes = ceil(phi * H_CPU / (eta_CPU * M * C_node)),Always round upward to the next whole node.
+RR-02,GPU node count,Use the ceiling of the calculated GPU-node requirement.,N_GPU_nodes = ceil(phi * H_GPU / (eta_GPU * M * G_node)),Always round upward to the next whole node.
+RR-03,Worked-example demand,Use the monthly CPU core-hours and GPU-hours as reported for each illustrative profile.,Input values from manuscript Table 2,Do not reverse-engineer unreported domain-level N/J/C/G/T values.
+RR-04,Storage,Preserve manuscript storage recommendations as ranges/text unless local D_* component inputs are supplied.,"S_active, S_persistent, S_archive equations",The manuscript does not provide component-level D_* values for Table 2 profiles or the illustrative scenario.

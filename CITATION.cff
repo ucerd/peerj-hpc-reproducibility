@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use these reproducibility materials, please cite the associated article and archived repository."
+title: "Reproducibility materials for Implementing Supercomputing Infrastructure for Third-Generation Universities: A Design Framework for Education, Research, and Innovation"
+type: software
+version: 1.0.0
+date-released: 2026-09-20
+authors:
+  - family-names: "Hussain"
+    given-names: "Tassadaq"
+  - family-names: "Islam"
+    given-names: "Muhammad Najam Ul"
+  - family-names: "Haider"
+    given-names: "Amna"
+  - family-names: "Alharbi"
+    given-names: "Soltan"
+  - family-names: "Geok"
+    given-names: "Tan Kim"
+doi: "10.5281/zenodo.XXXXXXX"
+repository-code: "REPLACE_WITH_GITHUB_REPOSITORY_URL"
