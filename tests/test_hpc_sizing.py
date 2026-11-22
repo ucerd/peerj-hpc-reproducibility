@@ -21,15 +21,15 @@ class SizingTests(unittest.TestCase):
     def setUp(self):
         self.a = SizingAssumptions()
 
-    def test_table2_entry(self):
+    def test_table3_entry(self):
         self.assertEqual(required_cpu_nodes(70000, self.a), 3)
         self.assertEqual(required_gpu_nodes(1200, self.a), 1)
 
-    def test_table2_intermediate(self):
+    def test_table3_intermediate(self):
         self.assertEqual(required_cpu_nodes(260000, self.a), 11)
         self.assertEqual(required_gpu_nodes(8000, self.a), 6)
 
-    def test_table2_advanced(self):
+    def test_table3_advanced(self):
         self.assertEqual(required_cpu_nodes(700000, self.a), 28)
         self.assertEqual(required_gpu_nodes(28000, self.a), 21)
 
@@ -52,5 +52,34 @@ class SizingTests(unittest.TestCase):
             required_cpu_nodes(10, bad)
 
 
-if __name__ == "__main__":
+class UpdatedMethodTests(unittest.TestCase):
+    def test_individual_allocated_job_hours(self):
+        from hpc_sizing import allocated_job_resource_hours
+        cases=[{'Allocated_CPU_cores':2,'Allocated_GPUs':0,'Elapsed_hours_overlapping_month':10},
+               {'Allocated_CPU_cores':32,'Allocated_GPUs':2,'Elapsed_hours_overlapping_month':1},
+               {'Allocated_CPU_cores':8,'Allocated_GPUs':1,'Elapsed_hours_overlapping_month':4}]
+        self.assertEqual(allocated_job_resource_hours(cases,'Allocated_CPU_cores'),84)
+        self.assertEqual(allocated_job_resource_hours(cases,'Allocated_GPUs'),6)
+    def test_negative_job_allocation_rejected(self):
+        from hpc_sizing import allocated_job_resource_hours
+        with self.assertRaises(ValueError):
+            allocated_job_resource_hours([{'Allocated_CPU_cores':-1,'Elapsed_hours_overlapping_month':2}],'Allocated_CPU_cores')
+
+
+class InputBoundaryTests(unittest.TestCase):
+    def test_zero_demand(self):
+        self.assertEqual(required_cpu_nodes(0, SizingAssumptions()), 0)
+        self.assertEqual(required_gpu_nodes(0, SizingAssumptions()), 0)
+
+    def test_nonfinite_demand(self):
+        for value in (float('nan'), float('inf'), -1):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                required_cpu_nodes(value, SizingAssumptions())
+
+    def test_nonfinite_assumption(self):
+        with self.assertRaises(ValueError):
+            required_cpu_nodes(1, SizingAssumptions(peak_factor=float('inf')))
+
+
+if __name__ == '__main__':
     unittest.main()

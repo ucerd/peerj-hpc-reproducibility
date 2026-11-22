@@ -20,7 +20,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 sys.path.insert(0, str(HERE))
 
-from hpc_sizing import SizingAssumptions, required_cpu_nodes, required_gpu_nodes
+from hpc_sizing import SizingAssumptions, required_cpu_nodes, required_gpu_nodes, active_storage, persistent_storage, archive_storage, allocated_job_resource_hours
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -62,7 +62,7 @@ def reproduce_profiles(data_dir: Path, output_dir: Path, a: SizingAssumptions):
             "CPU_Match": str(calc_cpu == int(row["Manuscript_CPU_Nodes"])),
             "GPU_Match": str(calc_gpu == int(row["Manuscript_GPU_Nodes"])),
         })
-    write_csv(output_dir / "table2_reproduced.csv", out)
+    write_csv(output_dir / "table3_reproduced.csv", out)
     return out
 
 
@@ -97,7 +97,7 @@ def main() -> int:
     ok_scenario = all(r["CPU_Match"] == "True" and r["GPU_Match"] == "True" for r in scenario)
     status = "PASS" if ok_profiles and ok_scenario else "FAIL"
 
-    lines = [f"Validation status: {status}", "", "Table 2 institutional profiles:"]
+    lines = [f"Validation status: {status}", "", "Table 3 institutional profiles:"]
     for r in profiles:
         lines.append(
             f"- {r['Profile']}: CPU {r['Calculated_CPU_Nodes']} "
@@ -111,13 +111,19 @@ def main() -> int:
             f"(reported {r['Manuscript_CPU_Nodes']}), GPU {r['Calculated_GPU_Nodes']} "
             f"(reported {r['Manuscript_GPU_Nodes']})"
         )
+    example_jobs = read_csv(args.data_dir / "illustrative_job_allocations.csv")
+    cpu_example = allocated_job_resource_hours(example_jobs, "Allocated_CPU_cores")
+    gpu_example = allocated_job_resource_hours(example_jobs, "Allocated_GPUs")
+    example_storage = (active_storage(20, 25, 15, 10), persistent_storage(20, 5, 10), archive_storage(15, 10))
+    if (cpu_example, gpu_example) != (84.0, 6.0) or example_storage != (70, 35, 25):
+        raise AssertionError("hypothetical demand/storage examples changed unexpectedly")
     lines += [
-        "",
-        "Storage note:",
-        "Storage equations are implemented in code/hpc_sizing.py, but the manuscript",
-        "does not report the component-level D_* inputs needed to reconstruct the",
-        "Table 2 storage ranges. Those ranges are therefore preserved as reported",
-        "rather than reverse-engineered from invented inputs.",
+        "", "Illustrative job-level allocations (not observed telemetry):",
+        f"- CPU core-hours {cpu_example:g}, GPU-hours {gpu_example:g}",
+        "", "Illustrative component-level usable storage, TB (not observed measurements):",
+        f"- Active {example_storage[0]:g}, persistent {example_storage[1]:g}, archive {example_storage[2]:g}",
+        "- Table 3 storage/staffing bands remain author-defined scenario envelopes,",
+        "  not independently validated minimum requirements or reconstructed field results.",
     ]
     report = "\n".join(lines) + "\n"
     (args.output_dir / "validation_report.txt").write_text(report, encoding="utf-8")

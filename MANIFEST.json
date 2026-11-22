@@ -1,35 +1,36 @@
 {
-  "package": "PeerJ HPC Reproducibility and Implementation Package",
-  "version": "1.0.0",
-  "release_date": "2026-09-20",
-  "validation": {
-    "reproduction": "PASS",
-    "unit_tests": "PASS",
-    "slurm_bash_syntax": "PASS",
-    "publication_safety_scan": "PASS"
-  },
-  "current_namal_context": {
-    "gpu_model": "NVIDIA GeForce RTX 4070 Ti",
-    "gpu_count": 40,
-    "aggregate_ram_tb": 5,
-    "network": "Low-latency switched cluster fabric",
-    "role_in_study": "context_only_not_empirical_validation_data"
-  },
+  "package": "PeerJ university HPC design-framework reproducibility",
+  "version": "1.2.0",
+  "prepared_date": "2026-11-22",
+  "verification_semantics": "Illustrative calculations and source-table arithmetic; not independent field evaluation or raw benchmark rerun",
+  "count_35_sources": 35,
+  "count_25_requirements": 25,
+  "source_specific_cluster_records_conflict": true,
   "files": [
     {
+      "path": ".gitattributes",
+      "sha256": "cff90315d13eba50c311a8d3ae19288f26e8e8383bd0caf8e5428ddd1019511c",
+      "bytes": 85
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "sha256": "5f5e5e65b2f3b7e283b52f289091bfa419ab953ee6d48b7336150b1d8459b6d9",
+      "bytes": 614
+    },
+    {
       "path": ".gitignore",
-      "sha256": "e5fcd7777b6cfa3ac38989c89f607751297bfb148b0a902db66586d42535b029",
-      "bytes": 71
+      "sha256": "be9f67f66bef60f996b082da9a02d64c500770a67c2f3a8a3ba93a75142bb2bc",
+      "bytes": 78
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "f17ce31e2fb73e524dfca9eb68cdce70998e82d55af16fadc0696f3cd8c1b121",
-      "bytes": 770
+      "sha256": "8115c9203a2f44a0638ff6e8a044dacd7dd1c7f27224414ef87f98679e7c3e7c",
+      "bytes": 1789
     },
     {
       "path": "CITATION.cff",
-      "sha256": "462566c41fcdea375dac3c47e2152a60bfd0992ff19d8b764d42e072c2057b11",
-      "bytes": 735
+      "sha256": "0953336334d44e62e21e6b1380cdece5805cdafa59356b033db9263426a33840",
+      "bytes": 763
     },
     {
       "path": "LICENSE_CODE",
@@ -43,13 +44,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "a838ec172080622d2dda586c152335f99dd7a7d111af16862b63d86a9425e945",
-      "bytes": 6719
+      "sha256": "d09c045628ed3b0862461003fa5ee6def1285d8e55bf5d5a411bda04cc789bc2",
+      "bytes": 6766
     },
     {
       "path": "RELEASE_CHECKLIST.md",
-      "sha256": "a463a99976637389bcf1573c5e93511c901795750b0ed99b4bb4a1a924304977",
-      "bytes": 856
+      "sha256": "6a56ce427453330022ca8ec203c40aa067c42942ce9e1b5b1f3834121a91d533",
+      "bytes": 1974
     },
     {
       "path": "SECURITY.md",
@@ -58,33 +59,63 @@
     },
     {
       "path": "VERSION",
-      "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
+      "sha256": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d",
       "bytes": 6
     },
     {
+      "path": "code/check_source_benchmark_arithmetic.py",
+      "sha256": "155753d9cafebdcf203a99404d99aba364f9d2182a6f48dc2720b446e3ce6f60",
+      "bytes": 1154
+    },
+    {
       "path": "code/hpc_sizing.py",
-      "sha256": "ae00bae90f9b4a20a5e398fc06d4916a65debba909e7848c3e97df0b05131150",
-      "bytes": 5300
+      "sha256": "4d483ec7b36ad3bb2b2ca48e619c65e1ec240cffa64feabc232133ede100bbc7",
+      "bytes": 6494
+    },
+    {
+      "path": "code/release_integrity.py",
+      "sha256": "11ee16281a8dc2ac17717f2c01fb2d90246590698072abb04fdfa4c807642699",
+      "bytes": 2336
     },
     {
       "path": "code/reproduce_results.py",
-      "sha256": "06f664b094d885f459d8a2fd6cd2bf3794a5993af161773d2fa610f683827733",
-      "bytes": 4949
+      "sha256": "f50bf45ae9fe9d106a6860525c1ecc63a4ae8e445bd659eb6693d42776494177",
+      "bytes": 5736
     },
     {
       "path": "code/validate_package.py",
-      "sha256": "c9394bb3a6c2e04fa257f95b784ac4e3421a504b6b3c89a02cc9623377e606d2",
-      "bytes": 4073
+      "sha256": "68a94164ecc04341373919ec937a147a08c70a43562103f351acbf14f20daeb5",
+      "bytes": 6673
     },
     {
       "path": "config/namal_hpc_profile.json",
-      "sha256": "c4a7a6df998b9403c22d80a32cd0fe30f298f56cc3df93461525ea1b5068de2b",
-      "bytes": 889
+      "sha256": "5490f559a4c534339ba242408948f9a6599fa21360409cba22bac687ab2fe7e3",
+      "bytes": 1570
+    },
+    {
+      "path": "data/CAID_Dashboard_FINAL_2026-11-22.xlsx",
+      "sha256": "d910045f8582901a2c21db6b73d676d580756ef8725cdd8e40062729fc448f64",
+      "bytes": 8650
     },
     {
       "path": "data/Supplemental_Data_S1.xlsx",
-      "sha256": "9e7579b3f0240acba4698c3565b3ef45e19f93ba4054760893829d4fac3507e4",
-      "bytes": 38349
+      "sha256": "fb163c13c643148e0d7db81421eb5706cea2bef208dc40b1a846a4f312fefd9c",
+      "bytes": 75459
+    },
+    {
+      "path": "data/Supplemental_Data_S1_v1.1.1_baseline.xlsx",
+      "sha256": "8ef71ebeba7941f18c03b7ce2a1ba4e9ace18274e1e74bddab49ff07ee9b86f3",
+      "bytes": 73006
+    },
+    {
+      "path": "data/caid_management_metrics.csv",
+      "sha256": "7ee972f5d3e4f58626805a5865ee25800b96d1dbed21add28cdd5375a325462d",
+      "bytes": 1385
+    },
+    {
+      "path": "data/cluster_configuration_sources.csv",
+      "sha256": "238fb936cb48b65ae79808797c1e3181701eb7a028802972243a22d7ab197b91",
+      "bytes": 1288
     },
     {
       "path": "data/conformance_matrix.csv",
@@ -100,6 +131,11 @@
       "path": "data/framework_traceability.csv",
       "sha256": "fbb59005d0097c3e37db446503a2bfe5dd9ee9cf9b447176093c3209230500c2",
       "bytes": 1322
+    },
+    {
+      "path": "data/illustrative_job_allocations.csv",
+      "sha256": "06e5980d5db77c9985e34ec57e4802e38571eee0559df4fc80674aca73d82647",
+      "bytes": 316
     },
     {
       "path": "data/illustrative_scenario.csv",
@@ -127,6 +163,16 @@
       "bytes": 1803
     },
     {
+      "path": "data/paksupercomputer_reported_strong_scaling.csv",
+      "sha256": "7940ebf272deefd74f7a1ccfaecf14d8eb78661426b3e3f400dc23b4c017165a",
+      "bytes": 1169
+    },
+    {
+      "path": "data/partner_service_claims.csv",
+      "sha256": "440944548adb03b7fabbb57bdda00669b460ef77de94cca51b836029db5aea0d",
+      "bytes": 1417
+    },
+    {
       "path": "data/procurement_template.csv",
       "sha256": "0a044cbcfac9894a3edaf139fd556a5bbf040b409012ec5c0b5a9cc1f99f9f30",
       "bytes": 1688
@@ -135,6 +181,11 @@
       "path": "data/requirement_extraction.csv",
       "sha256": "f87a36e42ddd46d1b6286fe2faa3f404a07476c88c8a2fb05c3392bee456944a",
       "bytes": 7225
+    },
+    {
+      "path": "data/research_publication_provenance.csv",
+      "sha256": "50c967574ab181b169a04507525234f3e406c69fa9dda411717e2d558bae878d",
+      "bytes": 1838
     },
     {
       "path": "data/rounding_rules.csv",
@@ -157,24 +208,44 @@
       "bytes": 2610
     },
     {
+      "path": "docs/CAID_DASHBOARD_NOTES.md",
+      "sha256": "fd94390d03fa55e702e0b83563db77a0d33551fcf83e4b6e627806050a1024f6",
+      "bytes": 2430
+    },
+    {
+      "path": "docs/CLUSTER_CONFIG_AND_BENCHMARK_PROVENANCE.md",
+      "sha256": "183ababcf941a4ccb08f8ab0919e20e245942dc402b0bb8afecb92ce1f8be929",
+      "bytes": 3519
+    },
+    {
+      "path": "docs/EVALUATION_BOUNDARIES.md",
+      "sha256": "da36e3f711dbb0449ec2a89b30ee0a06cbd36cea4895bd6b1d59c6b4e3b3262e",
+      "bytes": 1732
+    },
+    {
       "path": "docs/GITHUB_ZENODO_RELEASE.md",
-      "sha256": "5c0025070c2e16aa420e8852f9e493df1329bbb680837ee314dbc790203abeef",
-      "bytes": 831
+      "sha256": "00637569ad81612c4df683c008079c9f3ec4c4922f01eaba13fe4f83c55a5b6c",
+      "bytes": 1183
     },
     {
       "path": "docs/IMPLEMENTATION_GUIDE.md",
-      "sha256": "37c991fed0efb955ea50adbb28b714ee27a1b8b2f636f2a22add683a2faebe34",
-      "bytes": 3221
+      "sha256": "c0910dc4a4b71f7481409b99f84e425a6a44b75cfbf50b53d810564d36d18db5",
+      "bytes": 3313
     },
     {
       "path": "docs/NAMAL_HPC_CONTEXT.md",
-      "sha256": "a36237a68a4a84b00fff6cab16ffaf57d2fa3f51f5b1a978118386e66e5eb7b0",
-      "bytes": 1417
+      "sha256": "29801842bae9e9681246e5c8cdffa7981de39d792799fb896c17d199d4e42ac8",
+      "bytes": 1059
+    },
+    {
+      "path": "docs/PAPER_AND_BENCHMARK_LINKS.md",
+      "sha256": "04c406235d4e87f49f5aeb0ea8cc2e4c873b499cc8e923979f2399d8e058eb10",
+      "bytes": 1059
     },
     {
       "path": "docs/PEERJ_RESUBMISSION_TEXT.md",
-      "sha256": "9a0e19352dbc70f09128039d170db008e292d00267ecd4d6134e69123e844810",
-      "bytes": 2057
+      "sha256": "4ad2dfa93899c528a158fe370e29662c07773e2b5e102887a94a3f5b98f9c54b",
+      "bytes": 2630
     },
     {
       "path": "docs/REFERENCE_ARCHITECTURE.md",
@@ -183,83 +254,83 @@
     },
     {
       "path": "docs/REPRODUCIBILITY_NOTES.md",
-      "sha256": "79d392c40d7a6a8e255b0517a0588e4c593c88409d1b08412030e928a997c9ae",
-      "bytes": 960
+      "sha256": "81aeb47f341892de3680856f71a69b91ea2c126f489095ba0f1e040b6215957a",
+      "bytes": 1334
     },
     {
       "path": "docs/TRAINING_MATERIAL_PROVENANCE.md",
-      "sha256": "9614363b5c2e2441ef51f701f1569471cc5ebffcd6b8be02c04cf209df59d07a",
-      "bytes": 1150
+      "sha256": "ca608072d21e36e821e521d60597367914a1ff8477eb9437d6d5b305ae6f6ed8",
+      "bytes": 1231
     },
     {
       "path": "examples/README.md",
-      "sha256": "db5d04c892dca788dfaeb22259c26444a02773e298bf0234c13d806733198274",
-      "bytes": 650
+      "sha256": "ebd6c9e2518c45afc249c3662b28e9ab691369e9f5f814096a4f026e70625f82",
+      "bytes": 1177
     },
     {
       "path": "examples/python/checkpoint_train.py",
-      "sha256": "80151095be444e3c1ac9d766956468a13885a146df4f01c39fc8dcda50e4c553",
-      "bytes": 2693
+      "sha256": "db09d4305e8f89fbd2950d351d8e322d1620e06e7ca3cbcf3e00991f6557fc7e",
+      "bytes": 2967
     },
     {
       "path": "examples/python/ddp_smoke_test.py",
-      "sha256": "9e3728c2c69b565476be8a332fee9c0565f9c65c3c2f7bd44c8124666fe4b696",
-      "bytes": 1721
+      "sha256": "4cf41ab2b918bdbce3eabfd8fde4c69e6aa9e176f9d1484c9f842a450aae04fc",
+      "bytes": 1794
     },
     {
       "path": "examples/slurm/00_cpu_single_node.sbatch",
-      "sha256": "3c5834d2924ba94ca1010eb989a68b7b12ed8d19f661ca8d1213748a99502778",
-      "bytes": 397
+      "sha256": "9447ef1629053b38a842f57889f74dfd057f93354972a5431349b517ccf1abb0",
+      "bytes": 373
     },
     {
       "path": "examples/slurm/01_basic_multinode.sbatch",
-      "sha256": "d227ff9cfb80bcc34ac28ed80f430bd8a82d15be4c8ecb7050d1bfe1abbc1f7a",
-      "bytes": 483
+      "sha256": "815745c226225dc6f281eea0f468f8d1955f50894e113fb35b384976a5efb86d",
+      "bytes": 459
     },
     {
       "path": "examples/slurm/02_openmp.sbatch",
-      "sha256": "0ea3a0cc125f1abbe4d0d02e526a746eab9ef5b600fb9375ebf0fd5ce5fffdbc",
-      "bytes": 559
+      "sha256": "6ab70070058780b110bdcdf0cec3898c9e2d5db004a6a20dfd7f8a397968183a",
+      "bytes": 535
     },
     {
       "path": "examples/slurm/03_mpi_multinode.sbatch",
-      "sha256": "5905e74f84a3fc948b2f5738a1bdbac367e9aca112af5b3aee7eab55e7c86b39",
-      "bytes": 542
+      "sha256": "12eb16a8c87b589569a711f9e1e8fbbbe31c1ee7ad61be72c7e32c531590ecff",
+      "bytes": 617
     },
     {
       "path": "examples/slurm/04_gpu_single_node.sbatch",
-      "sha256": "2325df362f63fc853eb40914702bfde52bb9bebdadf6ef2441c3bca89f7a6727",
-      "bytes": 428
+      "sha256": "604bffa8a4b886744fc27d43199ac94f8b7aec64c1ecec9113ea60e62fd7f31e",
+      "bytes": 404
     },
     {
       "path": "examples/slurm/05_gpu_multinode_probe.sbatch",
-      "sha256": "ac7690697964210ab6baa79c554ddc6a2e4321354d04b28f39bb785a662deb2a",
-      "bytes": 463
+      "sha256": "6fa7f310742e227aaae79d8e534029b481cedbf8fead552915c5798f495fc9e0",
+      "bytes": 439
     },
     {
       "path": "examples/slurm/06_pytorch_single_gpu.sbatch",
-      "sha256": "07051546e0e7e331a3ac745d0791855fc79a7b3c4c8693905365c2ce89f44b2c",
-      "bytes": 611
+      "sha256": "96204f78ad2daa74519ee22eb2cd693a89b504a14120938082b8de5e4b5811d9",
+      "bytes": 587
     },
     {
       "path": "examples/slurm/07_pytorch_ddp.sbatch",
-      "sha256": "15782e7d18632a6ac22896ca8a10ab0a652e5d32e42ce672b35ffbee60c2145b",
-      "bytes": 902
+      "sha256": "73a77aedf2574bf5265ba97dbb971dcc64bc99e9d9dbed4b96a6dd869895b224",
+      "bytes": 878
     },
     {
       "path": "examples/slurm/08_pytorch_ddp_requeue.sbatch",
-      "sha256": "f2b7db07b4cc8dd9108438c29c6ecfd50d528313ee1ebbae2ac2ad264853554d",
-      "bytes": 829
+      "sha256": "f6c0c9d3595449555c69920d8281869a6be48e2b7082725139b44e970c94e5e8",
+      "bytes": 785
     },
     {
       "path": "examples/slurm/09_cuda_compile_and_run.sbatch",
-      "sha256": "7c124e1a6be44ff7106fb6ce07982924bb8f96ddf097029c7b6d27499bef5ab1",
-      "bytes": 505
+      "sha256": "296cdeb63d600250c3f15f3897a75213d5e02367d45746f084d48b264f4cb64a",
+      "bytes": 481
     },
     {
       "path": "examples/slurm_commands.md",
-      "sha256": "7d21aa1c091974c039400b59492dc898bbd833b0608b7ee1a89bfb45eaa56fd9",
-      "bytes": 603
+      "sha256": "d44d319515e9652cc21f08988eee2d3c11f71ca6dfd8f5e17d22ffccdcf0ad43",
+      "bytes": 598
     },
     {
       "path": "examples/src/cuda_vector_add.cu",
@@ -282,19 +353,14 @@
       "bytes": 821
     },
     {
-      "path": "outputs/package_validation.txt",
-      "sha256": "944997121eb7945e71ff1fccd0e55e963b67e21421a31aa50c6327fb0537e64d",
-      "bytes": 2664
-    },
-    {
-      "path": "outputs/table2_reproduced.csv",
+      "path": "outputs/table3_reproduced.csv",
       "sha256": "c1d8b73edf5defaa4b6175e8fe4846bf2691830103156d219134f92f7d655b38",
       "bytes": 624
     },
     {
       "path": "outputs/validation_report.txt",
-      "sha256": "2fe6eaa60daf33fc0eb8f291954e191a6e25d22524a51c8f6062b16e7a1d8c21",
-      "bytes": 612
+      "sha256": "f335ad19739ce4c66934b97ce8f79671cc191ead7e5d4bcbd6333fab579ac6b4",
+      "bytes": 692
     },
     {
       "path": "requirements.txt",
@@ -303,8 +369,8 @@
     },
     {
       "path": "tests/test_hpc_sizing.py",
-      "sha256": "5e63ebadba45d24fbbd841d467e5da0517eec558ace8fec2f5dc0719920aedda",
-      "bytes": 1695
+      "sha256": "df90991444bee67eec354fec8e74ef3d22bcf6af1dfdf749dafabefce4f2e375",
+      "bytes": 3219
     }
   ]
 }

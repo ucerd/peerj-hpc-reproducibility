@@ -31,6 +31,7 @@ def main() -> None:
 
     if not torch.cuda.is_available():
         raise RuntimeError("GPU/CUDA is required for this example")
+    local_rank = 0 if torch.cuda.device_count() == 1 else local_rank
     torch.cuda.set_device(local_rank)
     device = torch.device("cuda", local_rank)
 
@@ -62,17 +63,20 @@ def main() -> None:
         if rank == 0 and epoch % 10 == 0:
             print(f"epoch={epoch} loss={loss.item():.6f}", flush=True)
 
-        if checkpoint_requested:
+        # Synchronize the stop request so every rank enters the same barrier.
+        stop = torch.tensor(int(checkpoint_requested), device=device)
+        dist.all_reduce(stop, op=dist.ReduceOp.MAX)
+        if stop.item():
             if rank == 0:
                 torch.save(
                     {"epoch": epoch, "model": ddp.module.state_dict(), "optimizer": optim.state_dict()},
-                    ckpt,
+                    ckpt.with_suffix(".tmp"),
                 )
+                os.replace(ckpt.with_suffix(".tmp"), ckpt)
                 print(f"checkpoint_saved={ckpt}", flush=True)
             dist.barrier()
             dist.destroy_process_group()
-            # Non-zero tells the scheduler/site policy that the run ended early;
-            # the allocation itself is marked requeue-capable.
+            # Exit 99 indicates early stop; it does not automatically requeue.
             raise SystemExit(99)
 
     if rank == 0:

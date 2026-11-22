@@ -27,6 +27,7 @@ def main() -> None:
     backend = "nccl" if use_cuda else "gloo"
 
     if use_cuda:
+        local_rank = 0 if torch.cuda.device_count() == 1 else local_rank
         if local_rank >= torch.cuda.device_count():
             raise RuntimeError(
                 f"SLURM_LOCALID={local_rank}, but only {torch.cuda.device_count()} GPUs are visible"

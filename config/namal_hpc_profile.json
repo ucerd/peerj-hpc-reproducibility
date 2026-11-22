@@ -1,5 +1,5 @@
 {
-  "profile_name": "Namal Supercomputing Facility - public contextual profile",
+  "profile_name": "Namal HPC source-specific profile (September package; NOT reconciled to later paper)",
   "release_date": "2026-09-20",
   "role_in_study": "context_only_not_empirical_validation_data",
   "compute": {
@@ -22,5 +22,8 @@
     "nodes_and_cpu": "CAID Year in Review 2026, Supercomputer-as-a-Service page",
     "gpu_memory_network_override": "CAID facility operator confirmation, 2026-09-20"
   },
-  "methodological_boundary": "This profile is contextual implementation evidence only. It is not used to derive the manuscript's illustrative sizing results or to claim empirical institutional outcomes."
+  "methodological_boundary": "This profile is contextual implementation evidence only. It is not used to derive the manuscript's illustrative sizing results or to claim empirical institutional outcomes.",
+  "publication_status": "Author/operator-reported historical package configuration; later manuscript reports a different accelerator, CPU-core interpretation and network",
+  "source_disagreement": "The uploaded PakSupercomputer COTS manuscript describes 40 RTX 4090 GPUs, 800 physical cores/1600 threads and 10 GbE. The earlier repo reports 40 RTX 4070 Ti GPUs, 1600 as cores and an unspecified low-latency fabric. Whether these are different deployments, phases, or errors is unverified.",
+  "operator_confirmation_scope": "Author-reported in original 2026-09-20 package; no dated inventory or config snapshot supplied for independent reconciliation"
 }

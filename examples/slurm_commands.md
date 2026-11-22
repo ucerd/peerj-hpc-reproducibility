@@ -17,7 +17,7 @@ sacct -j <JOBID> --format=JobID,JobName,State,Elapsed,AllocCPUS,ReqMem,MaxRSS
 scancel <JOBID>
 
 # Follow logs
-tail -f logs/<job-name>_<jobid>.out
+tail -f <job-name>_<jobid>.out
 ```
 
 Resource requests should be explicit and proportionate to the workload. For

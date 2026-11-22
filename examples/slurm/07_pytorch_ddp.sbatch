@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=ddp_smoke
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --error=logs/%x_%j.err
+#SBATCH --output=%x_%j.out
+#SBATCH --error=%x_%j.err
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=4
@@ -10,7 +10,6 @@
 #SBATCH --time=00:15:00
 
 set -euo pipefail
-mkdir -p logs
 
 # Adapt to the site's managed environment:
 # module load cuda

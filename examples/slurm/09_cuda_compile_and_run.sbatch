@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=cuda_build_run
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --error=logs/%x_%j.err
+#SBATCH --output=%x_%j.out
+#SBATCH --error=%x_%j.err
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
@@ -10,7 +10,6 @@
 #SBATCH --time=00:10:00
 
 set -euo pipefail
-mkdir -p logs
 
 # RTX 4070 Ti is an Ada GPU (SM 8.9). Adapt module name to the site.
 # module load cuda

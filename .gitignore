@@ -1,8 +1,8 @@
 __pycache__/
 *.py[cod]
-.venv/
-logs/
-checkpoints/
-*.out
-*.err
 .DS_Store
+.pytest_cache/
+*.log
+*.aux
+*.pdf
+!docs/*.pdf

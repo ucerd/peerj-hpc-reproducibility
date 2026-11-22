@@ -1,16 +1,21 @@
-# Release checklist
+# PeerJ reproducibility release checklist — v1.2.0
 
-- [x] Reproduction script executes successfully.
-- [x] Unit tests pass.
-- [x] Package validator passes.
-- [x] Slurm example scripts pass `bash -n`.
-- [x] Public examples contain no private IP addresses or historical production node names.
-- [x] Namal HPC profile uses operator-confirmed RTX 4070 Ti / 40 GPU / 5 TB RAM / low-latency-network values.
-- [x] Supplemental workbook includes implementation, KPI, procurement, traceability, context, and training-index sheets.
-- [ ] Replace Zenodo DOI placeholder.
-- [ ] Replace GitHub repository URL placeholder.
-- [ ] Confirm final code/data licenses with journal/institution.
-- [ ] Upload repository and create `v1.0.0` release.
-- [ ] Archive release in Zenodo/Figshare.
-- [ ] Enter DOI in PeerJ Data/Code Availability declarations.
-- [ ] Correct all author affiliation metadata in PeerJ.
+- [x] `CITATION.cff` present in the local ZIP staging root, with no fake DOI.
+- [x] Source-specific GPU and CPU-core discrepancies explicitly retained.
+- [x] Node-count result references use manuscript Table 3; original assumption-source notes retained.
+- [x] All 12 numerical tests, six source-reported scaling checks, and 10 Slurm syntax checks passed locally.
+- [x] Exact manifest and regenerated archived outputs verified; no raw HPC benchmark or production runtime test claimed.
+- [x] Job-level allocated resource-hour calculation, source-table scaling check and storage worked example added.
+- [x] Original 35 inventory records and 25 requirement records preserved.
+- [ ] Confirm source-derived published benchmark data against raw machine logs; current package only checks transcribed arithmetic.
+- [ ] Obtain or separately link exact benchmark Git repositories and pinned commits, not just related scheduling code.
+- [ ] Obtain partner acceptance records for Malakand, PAF-IAST, GIKI; permitted BIŌN evidence.
+- [ ] Conduct independent evaluation of the university-wide framework or limit claims to design justification and artificial illustration.
+- [ ] Complete/explain historical evidence-source search and coder provenance; do not invent it.
+- [ ] Confirm current cluster GPU/CPU/network profile with dated inventory and configuration history.
+- [ ] Connect to GitHub and publish the new package. This ZIP **has not been pushed remotely**.
+- [ ] Create immutable release tag, verify permanent DOI (if issued), ensure the PeerJ resubmission archives match released files.
+- [ ] Complete manuscript/rebuttal page and line references after the last typeset build.
+
+- [x] Added aggregate-only dashboard and contextual S1 sheets; original baseline workbook retained.
+- [ ] Obtain definitions for 20,000+ and average usage, reconcile portfolio stage counts, and verify partnership status and sharing permissions.

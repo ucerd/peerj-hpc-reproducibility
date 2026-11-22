@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "If you use these reproducibility materials, please cite the associated article and archived repository."
+message: "If you use these reproducibility materials, please cite the under-review manuscript and this versioned repository; cite any DOI only once issued."
 title: "Reproducibility materials for Implementing Supercomputing Infrastructure for Third-Generation Universities: A Design Framework for Education, Research, and Innovation"
 type: software
-version: 1.0.0
-date-released: 2026-09-20
+version: 1.2.0
+date-released: 2026-11-22
 authors:
   - family-names: "Hussain"
     given-names: "Tassadaq"

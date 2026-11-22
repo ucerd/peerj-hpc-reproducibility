@@ -5,8 +5,9 @@ standard library. It implements the equations reported in the manuscript.
 
 Notation
 --------
-H_d_CPU = N_d * J_d * C_d * T_d
-H_d_GPU = N_d * J_d * G_d * T_d
+H_d_CPU = sum_j(allocated_cpu_cores_j * elapsed_hours_in_month_j)
+H_d_GPU = sum_j(allocated_gpus_j * elapsed_hours_in_month_j)
+N_d * J_d * C_d * T_d applies only to a homogeneous job group.
 
 N_CPU = ceil(phi * H_CPU / (eta_CPU * M * C_node))
 N_GPU = ceil(phi * H_GPU / (eta_GPU * M * G_node))
@@ -34,6 +35,8 @@ class SizingAssumptions:
     gpus_per_node: float = 4.0
 
     def validate(self) -> None:
+        if not all(math.isfinite(v) for v in vars(self).values()):
+            raise ValueError("sizing assumptions must be finite")
         if self.peak_factor <= 0:
             raise ValueError("peak_factor must be > 0")
         for name in (
@@ -53,8 +56,8 @@ class SizingAssumptions:
 
 def _nonnegative(name: str, value: float) -> float:
     value = float(value)
-    if value < 0:
-        raise ValueError(f"{name} must be non-negative")
+    if not math.isfinite(value) or value < 0:
+        raise ValueError(f"{name} must be finite and non-negative")
     return value
 
 
@@ -106,6 +109,8 @@ def required_nodes(
     month = float(available_hours_per_month)
     capacity = float(capacity_per_node)
 
+    if not all(math.isfinite(v) for v in (peak, util, month, capacity)):
+        raise ValueError("sizing parameters must be finite")
     if peak <= 0:
         raise ValueError("peak_factor must be > 0")
     if not 0 < util <= 1:
@@ -151,3 +156,20 @@ def persistent_storage(projects: float, shared_software: float, curated_results:
 
 def archive_storage(retained_datasets: float, compliance_copies: float) -> float:
     return sum(_nonnegative("archive_storage_component", x) for x in (retained_datasets, compliance_copies))
+
+
+def allocated_job_resource_hours(jobs, resource_key: str) -> float:
+    """Sum individual nonduplicated job *allocations* over the month.
+
+    Each mapping must supply resource_key ('Allocated_CPU_cores' or
+    'Allocated_GPUs') and 'Elapsed_hours_overlapping_month'. The caller is
+    responsible for collecting exactly one row per executed allocation and
+    splitting allocations crossing month boundaries, not job steps and parent
+    rows together. This is not a GPU hardware-utilization metric.
+    """
+    total = 0.0
+    for j in jobs:
+        qty = _nonnegative(resource_key, float(j[resource_key]))
+        hrs = _nonnegative('Elapsed_hours_overlapping_month', float(j['Elapsed_hours_overlapping_month']))
+        total += qty * hrs
+    return total

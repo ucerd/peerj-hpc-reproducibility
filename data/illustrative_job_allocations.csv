@@ -1,0 +1,4 @@
+Job_ID,Service_Domain,Allocated_CPU_cores,Allocated_GPUs,Elapsed_hours_overlapping_month,Provenance
+HYP-001,Teaching,2,0,10,"HYPOTHETICAL instructional job, not CAID log"
+HYP-002,Research,32,2,1,"HYPOTHETICAL instructional job, not CAID log"
+HYP-003,External,8,1,4,"HYPOTHETICAL instructional job, not CAID log"

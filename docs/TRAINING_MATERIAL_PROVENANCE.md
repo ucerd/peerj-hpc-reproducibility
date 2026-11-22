@@ -19,6 +19,6 @@ Publication-safety changes include:
 - job-derived rendezvous ports instead of one fixed port;
 - use of `srun --kill-on-bad-exit=1` for distributed failure propagation;
 - explicit checkpoint/signal behavior for requeue-capable training;
-- CUDA `sm_89` build target for the confirmed RTX 4070 Ti hardware.
+- CUDA `sm_89` build target for the the RTX 4070 Ti training example (the independently supplied later cluster manuscript reports RTX 4090 devices).
 
 See `data/training_source_index.csv` for the source-to-public-artifact mapping.

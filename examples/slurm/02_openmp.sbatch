@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=openmp_demo
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --error=logs/%x_%j.err
+#SBATCH --output=%x_%j.out
+#SBATCH --error=%x_%j.err
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
@@ -9,7 +9,6 @@
 #SBATCH --time=00:10:00
 
 set -euo pipefail
-mkdir -p logs
 
 # Adapt to the site's compiler module if required.
 # module load gcc

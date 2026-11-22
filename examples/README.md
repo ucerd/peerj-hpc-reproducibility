@@ -8,6 +8,7 @@ Important:
 - Site-specific module names may differ.
 - No internal IP addresses, node names, NIC names, credentials, or production
   scheduler configuration are included.
-- The current Namal context for this release is 40 NVIDIA RTX 4070 Ti GPUs,
-  5 TB aggregate RAM, and a low-latency switched cluster fabric.
-- The CUDA compile example targets `sm_89`, appropriate for RTX 4070 Ti (Ada).
+- The original September repository profile reports 40 RTX 4070 Ti GPUs, whereas a later COTS paper reports 40 RTX 4090 GPUs; do not assume they are the same verified hardware configuration.
+- The CUDA compile example targets `sm_89`, illustrative Ada target; actual installed GPU/driver requires checking.
+
+Submit from the repository root. Scheduler logs are written to the submission directory. Multi-node GPU examples require site-specific GPU binding, a shared checkpoint directory, functioning NCCL and a compatible Slurm signal/requeue policy. Exit 99 does not automatically requeue; checkpoints are demonstration state, not bitwise deterministic restart. These examples were syntax-checked only, not executed on a cluster for this release.

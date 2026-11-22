@@ -1,20 +1,9 @@
-# GitHub + Zenodo release procedure
+# Publishing the corrected release (author action)
 
-1. Create a public GitHub repository.
-2. Place the **contents** of this package at the repository root.
-3. Replace `10.5281/zenodo.XXXXXXX` in `README.md` and `CITATION.cff` after a
-   DOI is reserved/issued.
-4. Run:
-   ```bash
-   python code/reproduce_results.py
-   python -m unittest discover -s tests -v
-   python code/validate_package.py
-   ```
-5. Commit only publication-safe files. Do not add production scheduler
-   configuration, credentials, internal host lists, private IP addressing,
-   SSH keys, or restricted datasets.
-6. Tag the release `v1.0.0`.
-7. Create a GitHub Release.
-8. Archive the release in Zenodo or Figshare and record the DOI.
-9. Update the PeerJ Data Availability and Code Availability declarations.
-10. Preserve the exact archived release used in the resubmission.
+1. Review the source-specific hardware discrepancies and confirm sharing rights for each data file. Never add cluster secrets, confidential partner contracts or live scheduler auth data.
+2. From the unzipped root, run all commands shown in `README.md`; preserve outputs.
+3. After verification, push these files to the `ucerd/peerj-hpc-reproducibility` repository (requires an authorized GitHub account). No remote update has been made by preparation of this package.
+4. Tag a new revision tag e.g. `v1.2.0` **only after** remote commit is accepted. Create a GitHub Release from that tag.
+5. Archive that precise release at an approved permanent repository, obtain a genuine DOI, and cite that DOI. Do not change the tagged archive after DOI issuance; any later DOI metadata edits require a new release and rebuilt checksums.
+6. Upload *the same ZIP and included S1* to PeerJ and cite the resulting stable release/commit. Provide final log outputs in the resubmission record.
+7. Distinguish reproducible **illustrative** source calculations from the later paper's **reported** benchmark values, which lack raw logs in this package.

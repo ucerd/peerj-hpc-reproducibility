@@ -1,223 +1,61 @@
-# Implementing Supercomputing Infrastructure for Third-Generation Universities
+# University Supercomputing Design Framework — Reproducibility Release
 
-## Reproducibility and implementation package
+**Version 1.2.0 — 22 November 2026**
 
-This repository accompanies the manuscript:
+This repository accompanies the PeerJ Computer Science revision *Implementing Supercomputing Infrastructure for Third-Generation Universities: A Design Framework for Education, Research, and Innovation* (T. Hussain, M. N. U. Islam, A. Haider, S. Alharbi and T. K. Geok).
 
-**Implementing Supercomputing Infrastructure for Third-Generation Universities: A Design Framework for Education, Research, and Innovation**
+## What can be reproduced
 
-Authors: Tassadaq Hussain; Muhammad Najam Ul Islam; Amna Haider; Soltan Alharbi; Tan Kim Geok.
+- CPU and GPU node counts for **manuscript Table 3**: Entry **3/1**, Intermediate **11/6**, Advanced **28/21**, with scenario **12/8** under stated *hypothetical demand* and capacity assumptions.
+- A transparent example of job-level allocated resource hours, using explicit **hypothetical job records**, not CAID Slurm telemetry.
+- Author-assumed, component-level storage sums: **70 TB active, 35 TB persistent, 25 TB archive**; these do not empirically justify the Table 3 storage and staffing envelopes.
+- Arithmetic consistency of six strong-scaling rows transcribed from the **separately supplied** PakSupercomputer COTS technical manuscript (32.180 s at 1 node; 4.023 s at 20 nodes, ~8× speedup). **This is not a benchmark rerun; original machine logs are not supplied.**
+- Sanitized, generic HPC/Slurm, CUDA, OpenMP, MPI and PyTorch examples. These are **not** a deployable, production-exact Namal system image.
 
-The package makes the design-science artifact, evidence traceability, sizing
-method, worked examples, implementation checklist, KPI definitions, and
-publication-safe HPC/Slurm examples auditable and reusable.
+## How to verify the release
 
-## Methodological boundary
-
-This is **not** a republished institutional outcome dataset. The manuscript
-develops and evaluates a generalizable design artifact. The Namal HPC profile
-included here is contextual implementation evidence only and does not determine
-the illustrative sizing calculations.
-
-## Repository structure
-
-```text
-.
-├── README.md
-├── VERSION
-├── CHANGELOG.md
-├── CITATION.cff
-├── LICENSE_CODE
-├── LICENSE_DATA
-├── SECURITY.md
-├── requirements.txt
-├── config/
-│   └── namal_hpc_profile.json
-├── code/
-│   ├── hpc_sizing.py
-│   ├── reproduce_results.py
-│   └── validate_package.py
-├── data/
-│   ├── Supplemental_Data_S1.xlsx
-│   ├── source_inventory.csv
-│   ├── requirement_extraction.csv
-│   ├── conformance_matrix.csv
-│   ├── sizing_assumptions.csv
-│   ├── institutional_profiles.csv
-│   ├── illustrative_scenario.csv
-│   ├── rounding_rules.csv
-│   ├── implementation_checklist.csv
-│   ├── kpi_definitions.csv
-│   ├── procurement_template.csv
-│   ├── framework_traceability.csv
-│   ├── namal_hpc_public_context.csv
-│   ├── training_source_index.csv
-│   └── data_dictionary.csv
-├── examples/
-│   ├── slurm/
-│   ├── src/
-│   └── python/
-├── docs/
-├── tests/
-└── outputs/
-```
-
-## Supplemental Data S1
-
-`data/Supplemental_Data_S1.xlsx` contains:
-
-1. retained source inventory;
-2. retained-source eligibility rationale;
-3. requirement-extraction matrix;
-4. authoritative-source conformance matrix;
-5. sizing assumptions;
-6. institutional profile inputs;
-7. formula-driven reproduction of manuscript Table 2;
-8. illustrative scenario calculation;
-9. rounding/handling rules;
-10. data dictionary;
-11. implementation checklist;
-12. KPI definitions;
-13. procurement/specification template;
-14. research-question-to-artifact traceability;
-15. Namal HPC contextual profile;
-16. training-source provenance/index.
-
-The manuscript reports a targeted, iterative evidence synthesis rather than a
-systematic review. Therefore this package documents the 35 retained sources and
-does not fabricate a rejected-source log or PRISMA-style candidate count.
-
-## Core equations
-
-```text
-H_d^CPU = N_d × J_d × C_d × T_d
-H_d^GPU = N_d × J_d × G_d × T_d
-
-N_CPU = ceil(φ × H_CPU / (η_CPU × M × C_node))
-N_GPU = ceil(φ × H_GPU / (η_GPU × M × G_node))
-
-S_active     = D_input + D_scratch + D_checkpoints + D_outputs
-S_persistent = D_projects + D_shared_software + D_curated_results
-S_archive    = D_retained_datasets + D_compliance_copies
-```
-
-The worked examples use:
-
-| Parameter | Value |
-|---|---:|
-| Design peak factor, φ | 1.25 |
-| CPU target utilization, η_CPU | 0.70 |
-| GPU target utilization, η_GPU | 0.60 |
-| Available hours/month, M | 720 |
-| CPU cores/node, C_node | 64 |
-| GPUs/node, G_node | 4 |
-
-## Reproduce the manuscript calculations
-
-Core reproduction requires **Python 3.10+ only**.
+From an extracted copy of the ZIP or repository root (Python 3.10+; core scripts require standard library only):
 
 ```bash
-python code/reproduce_results.py
-```
-
-Expected results:
-
-| Case | CPU nodes | GPU nodes |
-|---|---:|---:|
-| Entry | 3 | 1 |
-| Intermediate | 11 | 6 |
-| Advanced | 28 | 21 |
-| Illustrative scenario | 12 | 8 |
-
-A successful run prints:
-
-```text
-Validation status: PASS
-```
-
-## Run the tests and package validation
-
-```bash
-python -m unittest discover -s tests -v
 python code/validate_package.py
+python code/reproduce_results.py
+python -m unittest discover -s tests -v
+python code/check_source_benchmark_arithmetic.py
 ```
 
-The validator checks required files, the 35-source inventory, numerical
-reproduction, the current contextual Namal profile, and publication safety of
-the public examples.
+Expected node-count results: Entry 3 CPU/1 GPU, Intermediate 11/6, Advanced 28/21, illustrative scenario 12/8. `code/validate_package.py` checks `CITATION.cff` at the package root, the exact file inventory and digests, source records, source-specific hardware discrepancies, archived numerical outputs and a limited publication-safety scan. CI runs the numerical tests and checks Slurm shell syntax. GPU/MPI/Slurm runtime validation is not included.
 
-## Slurm and systems examples
+## Source distinctions and research status
 
-The supplied training/learning archive included practical Slurm, MPI, GPU,
-PyTorch distributed, NCCL/Gloo, monitoring, and troubleshooting material.
-The public examples in this repository are rewritten and sanitized rather than
-copied verbatim.
+- **Prior publicly available paper:** *PakSupercomputer: An Open-Source, Scalable, and Heterogeneous Supercomputing Platform*: https://pakhpc.com/PakSupercomputer_Paper.pdf ; a 2025 conference paper is listed on Namal's faculty page. A DOI was not established for this release.
+- **Later supplied technical manuscript:** *PakSupercomputer: Design and Development of a COTS-Based Heterogeneous CPU–GPU–FPGA HPC Cluster* (T. Hussain, S. Alharbi, S. Khalid), 18 pages. Its publisher acceptance/publication status is **unverified**. Table 9 contains the strong-scaling numbers transcribed here. Its Data/Code Availability section says `https://github.com/ucerd/MARS-Slurm` is related software, **not** the full raw experimental archive.
+- **Hardware discrepancies:** The earlier Git package calls the cluster 40× RTX 4070 Ti / '1,600 cores' / an unspecified low-latency fabric. The supplied later technical manuscript specifies 40× RTX 4090 / 800 physical cores (1,600 threads) / **10 GbE**. These records are preserved separately; no dated equipment audit was supplied to establish whether they reflect revisions or distinct deployments. See `docs/CLUSTER_CONFIG_AND_BENCHMARK_PROVENANCE.md`.
+- **Institutional support:** Authors report support to University of Malakand, GIKI, and PAF-IAST, and advisory activity for BIŌN Technologies (KSA). Consortium participation is separately documented; partner go-live and consultancy completion **require external confirmation**. See `data/partner_service_claims.csv`.
 
-Examples include:
+### Scientific scope
 
-- single-node CPU;
-- multi-node `srun`;
-- OpenMP;
-- MPI;
-- single-node GPU;
-- multi-node GPU probe;
-- single-GPU PyTorch;
-- PyTorch DDP/NCCL;
-- checkpoint/requeue DDP;
-- CUDA compilation for RTX 4070 Ti (`sm_89`).
+This is a **design-science framework with internally validated calculations and a hypothetical scenario**, not an independently evaluated field deployment of the proposed university-wide governance method. The original 35-source/25-requirement extraction log is preserved, but missing historic platform/coder logs are **not invented**. `docs/EVALUATION_BOUNDARIES.md` identifies unresolved evidence and limitations.
 
-See `docs/TRAINING_MATERIAL_PROVENANCE.md`.
+### CAID institutional context (2023–22 November 2026)
 
-## Namal HPC contextual profile
+A publication-safe aggregate dashboard and machine-readable register document provisional management-reported figures: 500 completed projects, 50 PoCs, 20 MVPs, six CVPs, 200 hours per user on average, and approximately 100 potential industry links. The source workbook describes 20 MVP candidates and six pre-CVP offerings, so finalization requires reconciliation. The additional reported quantity exceeding 20,000 has no defined unit and is excluded from substantive interpretation. These are not raw scheduler records, independently verified achievements, confirmed industrial partnerships, or evidence of independent artifact evaluation. Counts may overlap; no funnel, conversion rate or annual trend is inferred. See `docs/CAID_DASHBOARD_NOTES.md` and `data/caid_management_metrics.csv`.
 
-For this release, the operational context is recorded as:
+### Package layout
 
-- 20 compute nodes;
-- 1,600 aggregate CPU cores;
-- **40 NVIDIA GeForce RTX 4070 Ti GPUs**;
-- **5 TB aggregate RAM**;
-- **low-latency switched cluster fabric**;
-- Slurm workload management.
+- `code/`: sizing, reproduction, package integrity and source-table arithmetic checks.
+- `data/Supplemental_Data_S1.xlsx`: audit, source-to-requirement mapping, example calculations and separately tagged context evidence.
+- `data/*.csv`: 35-source inventory, 25 requirements, assumptions, profiles, reported benchmark tables, service-context ledger.
+- `docs/`: implementation notes, security boundaries, evidence/source reconciliation and release instructions.
+- `config/`: nonproduction example with provenance and explicit hardware-version discrepancy.
+- `examples/`: public-safe educational workload examples, **not production config**.
+- `CITATION.cff`: valid project citation; no fictional DOI.
 
-The GPU count/model, RAM, and network description above are operator-confirmed
-for this release and supersede conflicting older summary values. These values
-are **context only** and are not used to derive the manuscript's illustrative
-sizing results.
+### Submission files
 
-Public CAID site: https://caid.namal.edu.pk/
+Use `data/Supplemental_Data_S1.xlsx` as Supplemental Data S1 and the complete versioned repository archive as Supplemental Code S2. The updated S1 adds two explicitly contextual sheets; all original evidence CSVs and a byte-identical baseline S1 workbook are retained; Table 2 references in the sizing-assumptions source notes refer to the assumptions table, not the Table 3 node-count results. The workbook retains its original preparation date. See `docs/PEERJ_RESUBMISSION_TEXT.md` for conditional manuscript statements and `docs/GITHUB_ZENODO_RELEASE.md` for publication instructions.
 
-## Storage reproducibility limitation
+### Licenses and citation
 
-The storage equations are implemented in `code/hpc_sizing.py`. The manuscript
-does not report the component-level `D_*` values needed to reconstruct the
-Table 2 storage ranges numerically. The package therefore preserves the storage
-ranges as reported and does not reverse-engineer missing inputs.
+Code: MIT (`LICENSE_CODE`); data: CC BY 4.0 (`LICENSE_DATA`), subject to contributor/institutional rights confirmation. To cite this repository use the root `CITATION.cff`. Add a Zenodo DOI only **after** a real persistent DOI is issued. No placeholder DOI is advertised.
 
-## Security/publication safety
-
-Do not publish production Slurm configuration, private IP addresses, internal
-hostnames, NIC mappings, authentication material, user lists, or credentials.
-The included examples contain none of these.
-
-## Citation
-
-After the release is archived, replace `10.5281/zenodo.XXXXXXX` below and in
-`CITATION.cff`.
-
-> Hussain, T., Islam, M. N. U., Haider, A., Alharbi, S., & Geok, T. K. (2026).
-> *Reproducibility materials for “Implementing Supercomputing Infrastructure
-> for Third-Generation Universities: A Design Framework for Education,
-> Research, and Innovation”* (Version 1.0.0). Zenodo.
-> https://doi.org/10.5281/zenodo.XXXXXXX
-
-## License
-
-- Code: MIT License (`LICENSE_CODE`)
-- Data/reproducibility tables: CC BY 4.0 (`LICENSE_DATA`)
-
-Confirm institutional/journal licensing requirements before public release.
-
-## Contact
-
-Tassadaq Hussain
-tassadaq@ucerd.com
+Repository intended for publication: https://github.com/ucerd/peerj-hpc-reproducibility . A local ZIP prepared for upload **does not mean the remote GitHub repository has been changed**.

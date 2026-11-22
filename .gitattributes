@@ -1,0 +1,2 @@
+# Preserve exact released bytes for integrity verification across platforms.
+* -text

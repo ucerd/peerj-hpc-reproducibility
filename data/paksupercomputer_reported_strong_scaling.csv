@@ -1,0 +1,7 @@
+Nodes,Runtime_s_reported,Throughput_images_s_reported,Speedup_reported,Efficiency_pct_reported,Communication_overhead_pct_approx,Source,Raw_logs_available_in_this_package,Scope
+1,32.18,795.53,1.0,100,~0,User-supplied PakSupercomputer COTS paper Table 9 (page 13),No,published/manuscript table transcription; not independent benchmark rerun
+2,17.878,1431.95,1.8,90,~8,User-supplied PakSupercomputer COTS paper Table 9 (page 13),No,published/manuscript table transcription; not independent benchmark rerun
+4,10.056,2545.68,3.2,80,~15,User-supplied PakSupercomputer COTS paper Table 9 (page 13),No,published/manuscript table transcription; not independent benchmark rerun
+8,6.188,4136.73,5.2,65,~25,User-supplied PakSupercomputer COTS paper Table 9 (page 13),No,published/manuscript table transcription; not independent benchmark rerun
+16,4.469,5727.78,7.2,45,~38,User-supplied PakSupercomputer COTS paper Table 9 (page 13),No,published/manuscript table transcription; not independent benchmark rerun
+20,4.023,6364.2,8.0,40,~45,User-supplied PakSupercomputer COTS paper Table 9 (page 13),No,published/manuscript table transcription; not independent benchmark rerun

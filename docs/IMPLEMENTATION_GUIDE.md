@@ -65,7 +65,7 @@ The public examples in `examples/slurm/` demonstrate:
 - single-GPU PyTorch;
 - PyTorch distributed/NCCL rendezvous;
 - signal/checkpoint/requeue workflow;
-- RTX 4070 Ti CUDA compilation (`sm_89`).
+- Ada-generation CUDA compilation (`sm_89`), for *illustrative* devices only; validate actual installed GPU/driver before deployment.
 
 ### Submission and monitoring
 

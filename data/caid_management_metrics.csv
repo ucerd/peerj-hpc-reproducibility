@@ -1,0 +1,8 @@
+metric_id,reported_value,unit,qualifier,source,evidence_status,verification_required,reporting_start_year,reporting_cutoff
+completed_projects,500,projects,reported total,Management statement,Provisional,"Completion rule, dates and deduplicated register required",2023,2026-11-22
+poc,50,PoCs,reported finalized,Management statement; source sheet: 50 PoC Initiatives,"Register lists initiatives, not verified completions",Confirm completion evidence per PoC,2023,2026-11-22
+mvp,20,MVPs,reported finalized,Management statement; Projects overview labels 20 MVP candidates,Stage discrepancy; provisional,Confirm MVP completion against candidate register,2023,2026-11-22
+cvp,6,CVPs,reported finalized,Management statement; source sheet: 6 Pre-CVP,Stage discrepancy; provisional,Confirm commercial/validation status,2023,2026-11-22
+avg_usage,200,hours/user,reported average,Management statement,Definition pending,"Specify accounting interval, active-user denominator and resource-hour definition",2023,2026-11-22
+potential_industry_links,100,potential links,approximate,Management statement,Pipeline only; provisional,Distinguish leads from active or formal partnerships,2023,2026-11-22
+unspecified_metric,20000,undefined,strictly greater than,Management statement,Unit unknown; excluded from substantive interpretation,"Define metric, scope, unit and counting rule",2023,2026-11-22
